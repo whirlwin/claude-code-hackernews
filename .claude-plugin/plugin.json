@@ -1,0 +1,7 @@
+{
+  "name": "hackernews",
+  "version": "0.1.0",
+  "description": "The Hacker News front page in the spinner: an animated HN tile beside the top 30 stories, rotating, with links",
+  "author": { "name": "whirlwin" },
+  "types": "./types/index.d.ts"
+}

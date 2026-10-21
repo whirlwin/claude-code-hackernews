@@ -1,0 +1,6 @@
+{
+  "name": "claude-code-hackernews",
+  "description": "Hacker News mods for Claude Code",
+  "owner": { "name": "whirlwin" },
+  "plugins": [{ "name": "hackernews", "source": "./" }]
+}
