@@ -58,7 +58,12 @@ The [halloween](https://github.com/whirlwin/claude-code-halloween) mod also
 draws its own spinner, and only one of the two can show: which one depends on
 the order the engine runs their hooks in, which it does not promise for
 installed plugins. With both installed, hide the one you do not want with
-`/halloween` or `/hackernews`.
+`/halloween` or `/hackernews`. That lasts for the session; to keep one off
+for good, disable it:
+
+```
+claude plugin disable halloween@claude-code-halloween
+```
 
 The [spotify](https://github.com/whirlwin/claude-code-spotify) mod puts the
 song after the spinner's word, and the story takes the place of that word, so
@@ -69,8 +74,9 @@ the song does not show while a story does.
 The stories come from the official Hacker News API: `topstories.json` for the
 front page's order, then one request per story for its title, points, author,
 age and comment count, 31 requests in parallel through the engine's
-`$.http.fetch`. The mod fetches only while a turn runs, never between turns,
-and at most every five minutes. A fetch that fails, or gets no answer within
+`$.http.fetch`. The mod fetches while a turn runs, at most every five
+minutes; between turns only `/hackernews` fetches, and only when it has no
+list yet. A fetch that fails, or gets no answer within
 eight seconds, keeps the last list on screen; with no list yet, it tries again
 after 30 seconds, and the spinner shows its own word until one arrives. The
 first list starts the rotation at rank 1.
