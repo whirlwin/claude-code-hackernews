@@ -5,11 +5,7 @@ Claude works, a small orange HN tile takes the spinner's place, beside one of
 the top 30 stories as HN lays it out: rank and title on the first line, points,
 author, age and comments under it.
 
-```
-▗ ▖▖ ▖ 1. Mistral Large 4 (docs.mistral.ai)
-▐▀▌▛▖▌    233 points by whirlwin 1 hour ago | 57 comments (12s)
-▝ ▘▘▝▘
-```
+![The spinner rotating through the front page while Claude runs a command](docs/demo.gif)
 
 A new story every six seconds, rank 1 to 30 and round again. The rotation
 only moves while it is on screen, so the next turn picks up where the last one
@@ -52,18 +48,12 @@ Then run `/reload-plugins` in an open session, or restart Claude Code.
 | `/hackernews` | hide the front page, or bring it back; says why it could not be fetched, if it could not |
 | `/hackernews next` | skip straight to the next story |
 
-## With halloween and spotify
+## With other mods
 
-The [halloween](https://github.com/whirlwin/claude-code-halloween) mod also
-draws its own spinner, and only one of the two can show: which one depends on
-the order the engine runs their hooks in, which it does not promise for
-installed plugins. With both installed, hide the one you do not want with
-`/halloween` or `/hackernews`. That lasts for the session; to keep one off
-for good, disable it:
-
-```
-claude plugin disable halloween@claude-code-halloween
-```
+Only one mod can draw its own spinner: with another installed that does, which
+one shows depends on the order the engine runs their hooks in, which it does
+not promise for installed plugins. `/hackernews` hides this one for the
+session; `claude plugin disable hackernews@claude-code-hackernews` keeps it off.
 
 The [spotify](https://github.com/whirlwin/claude-code-spotify) mod puts the
 song after the spinner's word, and the story takes the place of that word, so
