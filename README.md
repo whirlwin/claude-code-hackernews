@@ -100,3 +100,7 @@ without a compile step.
 The plugin is named `hackernews` rather than after the repository because
 Claude Code reserves plugin names starting with `claude-`. It is not
 affiliated with Y Combinator or Hacker News.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
